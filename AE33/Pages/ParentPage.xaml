@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AE33.Pages.ParentPage"
+             Title="ParentPage">
+    <ScrollView>
+        <VerticalStackLayout Margin="10"
+                             Padding="10">
+            <Grid RowDefinitions="*,*,*,*"
+                  ColumnDefinitions="*,*"
+                  VerticalOptions="Center"
+                  HorizontalOptions="Center">
+                <Label Text="Name:"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Grid.Row="0"
+                       Grid.Column="0" />
+                <Entry WidthRequest="100"
+                       Margin="10"
+                       x:Name="parentNameEntry"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                        />
+                <Label Text="Last Name:"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Grid.Row="1"
+                       Grid.Column="0" />
+                <Entry WidthRequest="100"
+                       Margin="10"
+                       x:Name="parentLastNameEntry"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                        />
+                <Label Text="Tel. No. :"
+                       VerticalOptions="Center"
+                       HorizontalOptions="End"
+                       Grid.Row="2"
+                       Grid.Column="0" />
+                <Entry WidthRequest="100"
+                       Margin="10"
+                       x:Name="telNoEntry"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                        />
+                <RadioButton Content="Mother" Grid.Row="3" Grid.Column="0"/>
+                <RadioButton Content="Father" Grid.Row="3" Grid.Column="1"/>
+
+
+            </Grid>
+
+            <Button x:Name="AddButton"
+                    Text="Add"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    Clicked="AddButton_Clicked" />
+
+            <!--<Grid ColumnDefinitions="*,*,*,*"
+                  Margin="0,20,0,0">
+                <Label Text="ID"
+                       Grid.Column="0"
+                        />
+                <Label Text="Name"
+                       Grid.Column="1"
+                        />
+                <Label Text="Last Name"
+                       Grid.Column="2"
+                        />
+                <Label Text="Gender"
+                       Grid.Column="3"
+                        />
+
+            </Grid>-->
+
+            <ListView HasUnevenRows="True"
+                      x:Name="parentListView"
+                     ItemTapped="parentListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="*,*,*,*,*">
+                                <Label Text="{Binding P_ID}"
+                                       Grid.Column="0"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding P_Name}"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding P_L_Name}"
+                                       Grid.Column="2"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <Label Text="{Binding P_Tel}"
+                                       Grid.Column="3"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
+                                <!--<Label Text="{Binding C_Gender}"
+                                       Grid.Column="1"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />-->
+
+                                <Button Text="Delete"
+                                        Grid.Column="4"
+                                        x:Name="Delete"
+                                        Clicked="Delete_Clicked"
+                                        WidthRequest="75"
+                                        HeightRequest="40" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

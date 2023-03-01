@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AE33.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AE33"
+    xmlns:Pages="clr-namespace:AE33.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Home">
+            <ShellContent ContentTemplate="{DataTemplate Pages:HomePage}" Route="HomePage"/>
+        </Tab>
+        <Tab Title="Child">
+            <ShellContent ContentTemplate="{DataTemplate Pages:ChildPage}" Route="ChildPage"/>
+        </Tab>
+        <Tab Title="Parent">
+            <ShellContent ContentTemplate="{DataTemplate Pages:ParentPage}" Route="ParentPage"/>
+        </Tab>
+        <Tab Title="Assign">
+            <ShellContent ContentTemplate="{DataTemplate Pages:AssignPage}" Route="Assign"/>
+        </Tab>
+        <Tab Title="Reprot">
+            <ShellContent ContentTemplate="{DataTemplate Pages:ReprotPage}" Route="ReprotPage"/>
+        </Tab>
+    </TabBar>
+
+</Shell>

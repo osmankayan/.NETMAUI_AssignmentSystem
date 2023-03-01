@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AE33.Pages.ReprotPage"
+             Title="ReprotPage">
+    <ScrollView>
+        <Grid RowDefinitions="*" ColumnDefinitions="*,2*,*" >
+                <ListView Grid.Row="1" Grid.Column="1" x:Name="ListView_Reprot">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+                                    <Label Grid.Row="0" Grid.Column="0" TextColor="Red" Text="Child ID" FontSize="Medium"/>
+                                    <Label Grid.Row="0" Grid.Column="1" TextColor="Red" Text="Paren " FontSize="Medium"/>
+                                    <Label Grid.Row="1" Grid.Column="0"  Text="{Binding C_ID}" FontSize="Medium"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Margin="10,0,10,0"  Text="{Binding P_ID}" FontSize="Medium"/>
+                                <!--<Button Text="Delete"
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        x:Name="Delete"
+                                        Clicked="Delete_Clicked"
+                                        WidthRequest="75"
+                                        HeightRequest="40" />-->
+                                
+                            </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+    </ScrollView>
+</ContentPage>

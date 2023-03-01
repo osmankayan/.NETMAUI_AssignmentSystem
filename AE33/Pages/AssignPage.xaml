@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AE33.Pages.AssignPage"
+             Title="AssignPage">
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                <Label Text="Children's List" FontSize="Medium" TextColor="Blue" Grid.Column="0" Grid.Row="0"></Label>
+                <ListView Grid.Column="0" Grid.Row="1"
+                        x:Name="ListView_Children" ItemTapped="ListView_Children_ItemTapped">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="0.25*,*,*,*">
+                                    <Label Grid.Column="0"  Text="{Binding C_ID}"/>
+                                    <Label Grid.Column="1"  Margin="10,0,10,0"  Text="{Binding C_Name}"/>
+                                    <Label Grid.Column="2"  Text="{Binding C_L_Name}"/>
+                                    <Label Grid.Column="3"  Margin="10,0,10,0"  Text="{Binding C_Gender}"/>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+                <Label Text="Parent's List" FontSize="Medium" TextColor="Blue" Grid.Column="1" Grid.Row="0"></Label>
+                <ListView Grid.Column="1" Grid.Row="1" 
+                        x:Name="ListView_Parent" ItemTapped="ListView_Parent_ItemTapped" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="0.25*,*,*,*">
+                                    <Label Grid.Column="0" Text="{Binding P_ID}"/>
+                                    <Label Grid.Column="1" Margin="10,0,10,0"  Text="{Binding P_Name}"/>
+                                    <Label Grid.Column="2" Text="{Binding P_L_Name}"/>
+                                    <Label Grid.Column="3" Margin="10,0,10,0"  Text="{Binding P_Tel}"/>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid ColumnDefinitions="0.75*,0.75*,0.75*" RowDefinitions="*,*">
+
+
+                <Button Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" Text="Add" x:Name="Add_Button" Clicked="Add_Button_Clicked"/>
+                
+               
+            </Grid>
+
+            <!--<Grid RowDefinitions="*,*" ColumnDefinitions="*,2*,*" >
+                <ListView Grid.Row="1" Grid.Column="1" x:Name="ListView_Enroll">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid RowDefinitions="*,*" ColumnDefinitions="*,*">
+                                    <Label Grid.Row="0" Grid.Column="0" TextColor="Red" Text="Movie Name" FontSize="Large"/>
+                                    <Label Grid.Row="0" Grid.Column="1" TextColor="Red" Text="Movie Genre" FontSize="Large"/>
+                                    <Label Grid.Row="1" Grid.Column="0"  Text="{Binding Name}" FontSize="Medium"/>
+                                    <Label Grid.Row="1" Grid.Column="1" Margin="10,0,10,0"  Text="{Binding Genre}" FontSize="Medium"/>
+                                </Grid>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>-->
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
